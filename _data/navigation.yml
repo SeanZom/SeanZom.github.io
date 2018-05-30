@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "Posts"
-    url: /_posts/
+    url: posts/
   - title: "Collections"
-    url: /collections/
+    url: collections/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
