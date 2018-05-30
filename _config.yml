@@ -15,9 +15,6 @@
 # in the templates via {{ site.myvariable }}.
 
 
-# Build settings
-markdown: kramdown
-# theme: minima
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
@@ -28,8 +25,9 @@ title_separator          : ">"
 name                     : "Sean Zhu"
 description              : "My programming learning notes."
 url                      : "https://seanzom.github.io/"
+baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"
 repository               : "SeanZom/seanzom.github.io"
-
+words_per_minute         : 200
 comments:
   provider               : "staticman_v2"
 staticman:
@@ -48,7 +46,7 @@ analytics:
 # Site Author
 author:
   name             : "Sean Zhu"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           :  "/assets/images/bio-photo.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Android developer, Front-End beginner."
   location         : "Syd, Australia"
   email            : "seanzhuwx@gmail.com"
@@ -151,7 +149,19 @@ defaults:
       related: true
 
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
+  - jemoji
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
