@@ -25,7 +25,7 @@ title_separator          : ">"
 name                     : "Sean Zhu"
 description              : "My programming learning notes."
 url                      : "https://seanzom.github.io/"
-baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"
+baseurl                  :  # the subpath of your site, e.g. "/blog"
 repository               : "SeanZom/seanzom.github.io"
 words_per_minute         : 200
 comments:
