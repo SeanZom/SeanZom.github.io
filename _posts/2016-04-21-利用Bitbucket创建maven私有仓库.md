@@ -72,16 +72,16 @@ PASSWORD=<password_here>
 
 ```gradle
 allprojects {   
-         repositories {
-                jcenter()
-                maven {
-                        url "https://api.bitbucket.org/1.0/repositories/用户名或团队名/仓库名/raw/分支名"            
-                        credentials {
-                                username USERNAME
-                                password PASSWORD
-                        }
-                }
-         }
+    repositories {
+        jcenter()
+        maven {
+            url "https://api.bitbucket.org/1.0/repositories/用户名或团队名/仓库名/raw/分支名"            
+            credentials {
+                username USERNAME
+                password PASSWORD
+            }
+        }
+    }
 }
 ```
 
@@ -89,11 +89,11 @@ allprojects {
 
 ```gradle
 dependencies {
-        ...
-        // GROUP-ID      = ARTIFACT_PACKAGE
-        // ARTIFACT-ID  = ARTIFACT_NAME
-        // VERSION         = ARTIFACT_VERSION
-        compile 'GROUP-ID:ARTIFACT-ID:VERSION'//这个按照步骤3中定义的填补吧
+    //...
+    // GROUP-ID = ARTIFACT_PACKAGE
+    // ARTIFACT-ID  = ARTIFACT_NAME
+    // VERSION = ARTIFACT_VERSION
+    compile 'GROUP-ID:ARTIFACT-ID:VERSION'//这个按照步骤3中定义的填补吧
 }
 ```
 
