@@ -66,8 +66,8 @@ PASSWORD=<password_here>
 ```
 
 如无意外的话，去Bitbucket查看分支(步骤2中你所创建的分支)的commit记录就看到了你上传的库了，就像下图一样
-![上传成功](http://upload-images.jianshu.io/upload_images/428521-0f6a9d96b8301a72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![上传记录](http://upload-images.jianshu.io/upload_images/428521-acd4184591eb9520.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![上传成功](/assets/images/20160421-2.png){:class="img-responsive"}
+![上传记录](/assets/images/20160421-3.png){:class="img-responsive"}
 4. 上传成功之后，就可以在项目中使用了。在project的 `build.gradle` 中添加已上传的maven信息：
 
 ```gradle
