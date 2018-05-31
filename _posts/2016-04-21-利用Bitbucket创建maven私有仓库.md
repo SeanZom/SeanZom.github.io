@@ -1,6 +1,6 @@
 ---
 title:  "利用 Bitbucket 创建 maven 私有仓库"
-date:   
+date:   <%= Time.now.strftime('%Y-%m-%d %H:%M:%S %z') %>
 categories: 
   - programming
 tags: 
