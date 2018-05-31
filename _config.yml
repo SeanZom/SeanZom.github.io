@@ -24,7 +24,7 @@ title                    : "Xingor's Fridge"
 title_separator          : ">"
 name                     : "Sean Zhu"
 description              : "My programming learning notes."
-url                      : "https://seanzom.github.io/"
+url                      : "https://seanzom.github.io"
 baseurl                  :  # the subpath of your site, e.g. "/blog"
 repository               : "SeanZom/seanzom.github.io"
 breadcrumbs              : true  # disabled by default
