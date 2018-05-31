@@ -11,7 +11,7 @@ tags:
 
 使用Android Studio开发以后，有一项特别便利的功能就是添加依赖库只需要在gradle中添加一句代码就可以了：
 
-```
+```gradle
 dependencies {       
     compile 'com.android.support:appcompat-v7:23.2.1'
 }
@@ -28,11 +28,13 @@ dependencies {
 
 **简单来说，有以下步骤：(图片均来源于以上参考的文章)**
 1. 在Bitbucket上面新建一个私有的仓库
-![新建一个私有仓库]({{ "/assets/images/20160421-1.png" | relative_url }})
+
+![新建一个私有仓库](/assets/images/20160421-1.png){:class="img-responsive"}
+
 2. 创建一个 `README.md` 文件，并把它上传到一个新分支(文中所说的是新建了一个叫 `releases` 的新分支，其实新建一个分支，名字随你定就好，这是关键的一步，后面会试用到)
 3. 创建一个gradle脚本文件，用来把库上传到Bitbucket。这里会用到一个叫Wagon-git的Maven 插件，这个gradle脚本文件在上面那个网站最后已经给了出来，在原文作者的github里面，可[点击这里查看](https://github.com/JeroenMols/GitAsMaven)，直接把文件下载下来，放到你要上传的库的根目录下面，然后在要上传的库(`module`)的`build.gradle`的最上面添加
 
-```java
+```gradle
 apply from: 'xxx.gradle'  //xxx是你下载下来那个文件名
 //apply from: 'https://raw.githubusercontent.com/JeroenMols/GitAsMaven/master/publish-bitbucket.gradle'
 //也可以不用下载文件，直接添加上面注释的的这一句
@@ -40,7 +42,7 @@ apply from: 'xxx.gradle'  //xxx是你下载下来那个文件名
 
 如果是使用原文作者的那个gradle脚本，要在library的根目录下面创建一个`gradle.properties`的文件来定义那个gradle脚本的变量：
 
-```java
+```
 ARTIFACT_VERSION=<版本号> 
 ARTIFACT_NAME=<library的名字> 
 ARTIFACT_PACKAGE=<packagename> ARTIFACT_PACKAGING=aar //或者 jar，这个用哪个自己查 
@@ -59,7 +61,7 @@ PASSWORD=<password_here>
 
 我就是在这一步被困住了，因为我按照文中的方法去上传，但是Bitbucket的仓库一直没有签入记录，在Android Studio中Terminal中显示BUILD SUCCESSFUL的，后来在[这个stackoverflow的回答中找到了答案](http://stackoverflow.com/questions/33812099/how-to-publish-an-android-library-as-a-maven-artifact-on-bitbucket),大意就是wagon-git这个插件是用SSH来连接Bitbucket的，所以要在本地和Bitbucket中设置好SSH，[这里是设置方法](https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html),没什么难度的，按照步骤走下去就OK，记得把key贴到Bitbucket上面就可以了。然后在Terminal中重新运行
 
-```java
+```bash
 ./gradlew uploadArchives
 ```
 
@@ -68,7 +70,7 @@ PASSWORD=<password_here>
 ![上传记录](http://upload-images.jianshu.io/upload_images/428521-acd4184591eb9520.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 4. 上传成功之后，就可以在项目中使用了。在project的 `build.gradle` 中添加已上传的maven信息：
 
-```
+```gradle
 allprojects {   
          repositories {
                 jcenter()
@@ -85,7 +87,7 @@ allprojects {
 
 然后在 `module` 的 `build.gradle` 像之前那样添加依赖那样引用就OK了：
 
-```
+```gradle
 dependencies {
         ...
         // GROUP-ID      = ARTIFACT_PACKAGE
