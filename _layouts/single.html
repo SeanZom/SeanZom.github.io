@@ -30,7 +30,7 @@ layout: default
           {% if page.read_time %}
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
-          <div class="post-categories" style="border-top: 0.15em #0092ca solid;">
+          <div class="post-categories" style="border-top: 0.15em #0092ca solid; border-bottom: 0.15em #0092ca solid;">
             Categories : 
             {% if post %}
               {% assign categories = post.categories %}
