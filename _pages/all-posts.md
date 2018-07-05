@@ -1,6 +1,6 @@
 ---
-title: "Posts by Date"
-permalink: /all-posts/
-layout: posts
+title: "Posts by Category"
+permalink: /categories/
+layout: categories
 author_profile: true
 ---
